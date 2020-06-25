@@ -208,7 +208,7 @@ if (typeof (window) === 'undefined') {
       })
 
       let sortdata = d.sort(function (a, b) { return b.value - a.value });
-      console.log(sortdata.slice(0, 10));
+      
       let xdata = [], ydata = [];
       sortdata.slice(0, 20).forEach((val) => {
         xdata.push(val.name);
