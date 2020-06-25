@@ -1,7 +1,31 @@
-if (typeof (window) === 'undefined') {
+(function(){
 
-} else {
-  // console.log('browser');
+  $(window).on('load', function () {
+    $(".loading").fadeOut()
+  })
+
+  $(document).ready(function () {
+    let whei = $(window).width()
+    $("html").css({ fontSize: whei / 20 })
+    $(window).resize(function () {
+      let whei = $(window).width()
+      $("html").css({ fontSize: whei / 20 })
+    });
+  });
+
+  let t = setTimeout(update_time, 1000);
+  function update_time() {
+    let dt = new Date();
+    let y = dt.getFullYear();
+    let mt = dt.getMonth() + 1;
+    let day = dt.getDate();
+    let h = dt.getHours();
+    let m = dt.getMinutes();
+    let s = dt.getSeconds();
+    document.getElementById("showTime").innerHTML = y + "-" + mt + "-" + day + " " + h + ":" + m + ":" + s;
+    t = setTimeout(update_time, 1000);
+  } 
+
   function update_case_chart(xdata, ydata, chartid,color) {
     // 基于准备好的dom，初始化echarts实例
     let myChart = echarts.init(document.getElementById(chartid));
@@ -328,4 +352,5 @@ if (typeof (window) === 'undefined') {
     });
 
   });
-}
+
+})();

@@ -4,57 +4,22 @@
 <head>
   <meta charset="utf-8">
   <title>index</title>
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <link rel="stylesheet" href="css/comon0.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
-<script>
-  $(window).load(function () {
-    $(".loading").fadeOut()
-  })
 
-  /****/
-  $(document).ready(function () {
-    var whei = $(window).width()
-    $("html").css({ fontSize: whei / 20 })
-    $(window).resize(function () {
-      var whei = $(window).width()
-      $("html").css({ fontSize: whei / 20 })
-    });
-  });
-</script>
-<script type="text/javascript" src="js/echarts.min.js"></script> 
 
 <body>
   <div class="canvas" style="opacity: .2">
-    <iframe frameborder="0" src="js/index.html" style="width: 100%; height: 100%"></iframe>
+    <iframe frameborder="0" src="./js/bg_star.html" style="width: 100%; height: 100%"></iframe>
   </div>
   <div class="loading">
-    <div class="loadbox"> <img src="images/loading.gif"> 页面加载中... </div>
+    <div class="loadbox"> <img src="images/loading.gif"> Page is loading ... </div>
   </div>
   <div class="head">
     <h1>COVID-19 Visualization</h1>
-    <div class="weather"> <span id="showTime"></span></div>
-
-    <script>
-      var t = null;
-      t = setTimeout(time, 1000);//開始运行
-      function time() {
-        clearTimeout(t);//清除定时器
-        dt = new Date();
-        var y = dt.getFullYear();
-        var mt = dt.getMonth() + 1;
-        var day = dt.getDate();
-        var h = dt.getHours();//获取时
-        var m = dt.getMinutes();//获取分
-        var s = dt.getSeconds();//获取秒
-        document.getElementById("showTime").innerHTML = y + "-" + mt + "-" + day + " " + h + ":" + m + ":" + s ;
-        t = setTimeout(time, 1000); //设定定时器，循环运行     
-      }
-
-    </script>
-
-
+    <div class="weather"> <span id="showTime"></span></div> 
   </div>
+
   <div class="mainbox">
     <ul class="clearfix">
       <li>
@@ -62,7 +27,7 @@
           <div class="alltitle">Confirmed Cases By Country</div>
           <div class="allnav" id="chart_cases"></div>
           <div class="boxfoot"></div>
-        </div> 
+        </div>
         <div class="boxall" style="height: 5rem">
           <div class="alltitle">New Confirmed Cases</div>
           <div class="allnav" id="chart_daily_cases"></div>
@@ -80,7 +45,7 @@
           <div class="barbox2">
             <ul class="clearfix">
               <li class="pulll_left">Confirmed Cases </li>
-              <li class="pulll_left">Death Tolls</li>
+              <li class="pulll_left">Death Toll</li>
             </ul>
           </div>
         </div>
@@ -96,7 +61,7 @@
           <div class="alltitle">Death Toll By Country</div>
           <div class="allnav" id="chart_death"></div>
           <div class="boxfoot"></div>
-        </div> 
+        </div>
         <div class="boxall" style="height: 5rem">
           <div class="alltitle">New Death Toll</div>
           <div class="allnav" id="chart_daily_death"></div>
@@ -105,12 +70,11 @@
       </li>
     </ul>
   </div>
-  <div class="back"></div>
+  <div class="back"></div> 
 
- 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-
+  <script src="./js/jquery-3.5.1.min.js"></script>
+  <script src="./js/d3.v5.min.js"></script>
+  <script src="./js/echarts.min.js"></script> 
   <script type="module" src="main.js"></script>
 </body>
 
